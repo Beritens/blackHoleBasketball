@@ -7,6 +7,7 @@ public class LevelSelect : MonoBehaviour
     [System.Serializable]
     public class stage{
         public string name;
+        public Sprite image;
         [Scene]
         public string[] levels;
     }
@@ -15,10 +16,13 @@ public class LevelSelect : MonoBehaviour
     public Transform stageContainer;
     public GameObject page;
     public GameObject level;
+    [Scene]
+    public string introScene;
     void Awake()
     {
         if(!PlayerPrefs.HasKey("levels")){
             PlayerPrefs.SetInt("levels",-1);
+            SceneManager.LoadScene(introScene);
         }
     }
     void Start()
@@ -50,20 +54,21 @@ public class LevelSelect : MonoBehaviour
         int c = 0;
         for(int i = 0; i<stages.Length;i++){
             if(c+stages[i].levels.Length>levelIndex && levelIndex>=c){
+                
                 int stage = i;
                 int level = levelIndex-c;
                 loadScene(stage,level);
+                return;
             }
-            else{
-                c+= stages[i].levels.Length;
-            }
+            c+= stages[i].levels.Length;
+            
         }
     }
     public void loadNext(){
         loadScene(PlayerPrefs.GetInt("levels")+1);
     }
     [ContextMenu("reset")]
-    void Reset(){
+    public void Reset(){
         PlayerPrefs.DeleteAll();
     }
 

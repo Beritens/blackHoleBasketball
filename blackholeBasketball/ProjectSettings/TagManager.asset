@@ -8,6 +8,8 @@ TagManager:
   - delete
   - UI
   - ball
+  - hoop
+  - noSound
   layers:
   - Default
   - TransparentFX

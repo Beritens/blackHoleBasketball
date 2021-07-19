@@ -11,7 +11,17 @@ public class basketBall : MonoBehaviour
     public float force;
     public int wait = 5;
     Transform orange;
-    
+    public AudioSource source;
+    [SerializeField]
+    AudioClip groundSound;
+    [SerializeField]
+    AudioClip HoopSound;
+    [SerializeField]
+    AudioClip whoosh;
+    [SerializeField]
+    AudioClip gone;
+    [SerializeField]
+    float vol;
     void Awake()
     {
         start = transform.position;
@@ -32,6 +42,7 @@ public class basketBall : MonoBehaviour
         GameManager.OnStartEdit-=reset;
     }
     public void reset(){
+        gameObject.SetActive(true);
         starting = false;
         transform.position=start;
         transform.localRotation = Quaternion.identity;
@@ -44,6 +55,7 @@ public class basketBall : MonoBehaviour
         rb.simulated = true;
         rb.isKinematic=false;
         rb.velocity=(target.position-transform.position).normalized*force;
+        source.PlayOneShot(whoosh);
         
     }
     void FixedUpdate()
@@ -58,6 +70,26 @@ public class basketBall : MonoBehaviour
             
         }
         orange.rotation = Quaternion.identity;
+    }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        float volume = Mathf.Clamp01(other.relativeVelocity.magnitude * vol);
+        switch (other.gameObject.tag)
+        {
+            case "noSound":
+                return;
+            case "hoop":
+                source.PlayOneShot(HoopSound,volume);
+                break;
+            case "blackHole":
+                transform.position= Vector2.right*100;
+                rb.simulated=false;
+                source.PlayOneShot(gone,volume);
+                break;
+            default:
+                source.PlayOneShot(groundSound,volume);
+                break;
+        }
     }
 
     

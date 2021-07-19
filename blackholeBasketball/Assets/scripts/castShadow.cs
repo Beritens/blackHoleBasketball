@@ -17,6 +17,7 @@ public class castShadow : MonoBehaviour
         startScale = shadow.localScale;
         setShadowPosition();
     }
+    
 
     // Update is called once per frame
     void LateUpdate()

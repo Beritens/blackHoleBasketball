@@ -41,7 +41,7 @@ public class boy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
         if(left){
             if(((Vector2)ball.position+offsetLeft-startLeft).magnitude <distLeft){

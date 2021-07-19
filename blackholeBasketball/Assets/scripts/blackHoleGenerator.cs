@@ -20,19 +20,36 @@ public class blackHoleGenerator : MonoBehaviour
     int blackHoleCount = 0;
     [SerializeField]
     displayCount display;
+    GameManager manager;
+    [SerializeField]
+    AudioSource source;
+    [SerializeField]
+    AudioClip spawnSound;
+    //stop Editing after winning
+    bool canEdit = true;
     // Start is called before the first frame update
     void Start()
     {
+        manager= GameManager.instance;
         newLevel();
     }
     public void reset(){
-        
+        canEdit=true;
         editing = false;
         blackHoles = new List<blackHole>();
         SpawnHoles();
     }
+    void OnEnable()
+    {
+        GameManager.OnWin+=Stop;
+    }
+    void OnDisable()
+    {
+        GameManager.OnWin-=Stop;
+    }
     public void newLevel(){
-        editing = true;
+        //editing = true;
+        canEdit=true;
         blackHoles = new List<blackHole>();
         blackHolePositions = new List<Vector2>();
         GetHoleCount();
@@ -41,15 +58,15 @@ public class blackHoleGenerator : MonoBehaviour
     void GetHoleCount(){
         blackHoleCount = GameObject.FindObjectOfType<Level>().blackHoleCount;
     }
+    void Stop(){
+        canEdit=false;
+    }
     
 
-    // Update is called once per frame
     void Update()
     {
-        if(editing)
-        {
+        if(canEdit)
             placeAndMove();
-        }
         
     }
     void placeAndMove(){
@@ -59,11 +76,16 @@ public class blackHoleGenerator : MonoBehaviour
             Touch touch = Input.touches[0];
             
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(touch.position);
-            if(isMouseOverUI()){//EventSystem.current.IsPointerOverGameObject(0)){
+            if(isMouseOverUI()){
                 
                 return;
             }
             if(touch.phase==TouchPhase.Began){
+                if(!editing){
+                    //start Edit phase when trying to edit while in play phase
+                    manager.startEditPhase();
+                }
+                    
                 currentBlackHole = GetBlackHole(mousePos);
                 if(currentBlackHole != null){
                     //save offset of touch if finger is over black hole
@@ -74,15 +96,22 @@ public class blackHoleGenerator : MonoBehaviour
                 else if(blackHoleCount-blackHoles.Count >= 1){
                     //spawn black hole
                     GameObject hole = GameObject.Instantiate(blackHolePrefab,mousePos,Quaternion.identity);
+                    hole.GetComponentInChildren<SpriteRenderer>().sortingOrder+= blackHoles.Count;
+                    //animate black hole (I love lean tween)
+                    hole.transform.localScale=Vector3.zero;
+                    LeanTween.scale(hole,Vector3.one,0.1f);
+
                     blackHolePositions.Add(mousePos);
-                    
                     currentBlackHole = hole.GetComponent<blackHole>();
                     blackHoles.Add(currentBlackHole);
+                    source.PlayOneShot(spawnSound);
                     UpdateDisplay();
                 }
             }
             else if(touch.phase==TouchPhase.Moved){
                 if(currentBlackHole!= null){
+                    if(!editing)
+                        manager.startEditPhase();
                     //move black hole
                     currentBlackHole.transform.position = mousePos+offset;
                     blackHolePositions[blackHoles.IndexOf(currentBlackHole)]= currentBlackHole.transform.position;
@@ -91,7 +120,8 @@ public class blackHoleGenerator : MonoBehaviour
             }
             else if(touch.phase == TouchPhase.Ended){
                 if(currentBlackHole != null){
-                    
+                    if(!editing)
+                        manager.startEditPhase();
                     if(delete){
                         blackHolePositions.RemoveAt(blackHoles.IndexOf(currentBlackHole));
                         blackHoles.Remove(currentBlackHole);
@@ -113,6 +143,7 @@ public class blackHoleGenerator : MonoBehaviour
     void SpawnHoles(){
         for(int i = 0; i<blackHolePositions.Count;i++){
             GameObject hole = GameObject.Instantiate(blackHolePrefab,blackHolePositions[i],Quaternion.identity);
+            hole.GetComponentInChildren<SpriteRenderer>().sortingOrder+= i;
             blackHoles.Add(hole.GetComponent<blackHole>());
             
         }

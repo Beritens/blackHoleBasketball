@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,12 +12,15 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     public delegate void MyDelegate();
     public static MyDelegate OnStartEdit;
+    public static MyDelegate OnStartPlay;
     public static MyDelegate OnWin;
     public float floorHeight;
-    public GameObject WinMenu;
+    bool won = false;
     bool newLevel = false;
     int level;
-    
+    [SerializeField]
+    Menu menu;
+    bool startEdit = false;
     
     
     
@@ -34,28 +38,45 @@ public class GameManager : MonoBehaviour
          
          
      }
+     void OnDisable()
+     {
+         SceneManager.sceneLoaded -= OnSceneLoaded;
+     }
      void Start()
      {
-         Input.multiTouchEnabled = false;
-        ball.DontStart();
+        ball = GameObject.FindObjectOfType<basketBall>();
+        Input.multiTouchEnabled = false;
+        //ball.DontStart();
         blackHoleGenerator.newLevel();
-        switchPhase();
+        OnStartPlay();
+        //switchPhase();
      }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode){
+        if(GameObject.FindObjectOfType<Level>() == null){
+            Destroy(gameObject);
+            return;
+        }
+        won = false;
         //do this at the start of a level
         ball = GameObject.FindObjectOfType<basketBall>();
-        WinMenu.SetActive(false);
+        menu.Close();
         if(newLevel){
-            ball.DontStart();
+            //delete all saved blackholes
             blackHoleGenerator.newLevel();
-            switchPhase();
         }
         else{
             blackHoleGenerator.reset();
             
         }
+        OnStartPlay();
         newLevel = false;
         level = GameObject.FindObjectOfType<Level>().levelNumber;
+        
+        if(startEdit){
+            //start with edit phase (reset button on winScreen)
+            startEditPhase();
+            startEdit=false;
+        }
     }
     // Update is called once per frame
     void Update()
@@ -66,25 +87,49 @@ public class GameManager : MonoBehaviour
         }
     }
     public void switchPhase(){
+        if(won){
+            return;
+        }
+            
         editPhase = !editPhase;
         blackHoleGenerator.editing=editPhase;
         if(editPhase){
-            OnStartEdit();
+            startEditPhase();
         }
         else{
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            startPlayPhase();
         }
     }
+    public void startEditPhase(){
+        if(won){
+            return;
+        }
+        editPhase = true;
+        OnStartEdit();
+        blackHoleGenerator.editing=editPhase;
+    }
+    public void startPlayPhase(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        OnStartPlay();
+    }
     public void Win(){
+        if(won)
+            return;
+        won = true;
         if(PlayerPrefs.GetInt("levels")<level){
             PlayerPrefs.SetInt("levels",level);
         }
         OnWin();
-        WinMenu.SetActive(true);
+        menu.Open();
+
+        
     }
     public void GoToNextLevel(){
         newLevel = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
-        //SceneManager.LoadScene(GameObject.FindObjectOfType<Level>().nextScene);
+    }
+    public void Reset(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        startEdit=true;
     }
 }

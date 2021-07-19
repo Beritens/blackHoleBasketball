@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7020952433592264513}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: blackHole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.075
 --- !u!1 &4658612233264075419
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 9082903516947108302}
   m_Layer: 6
   m_Name: blackHole
-  m_TagString: Untagged
+  m_TagString: blackHole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
