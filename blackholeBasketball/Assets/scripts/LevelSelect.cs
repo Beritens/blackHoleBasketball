@@ -7,12 +7,10 @@ public class LevelSelect : MonoBehaviour
     [System.Serializable]
     public class stage{
         public string name;
-        public Sprite image;
         [Scene]
         public string[] levels;
     }
     public stage[] stages;
-    public pageSwiper swiper;
     public Transform stageContainer;
     public GameObject page;
     public GameObject level;
@@ -22,22 +20,33 @@ public class LevelSelect : MonoBehaviour
     {
         if(!PlayerPrefs.HasKey("levels")){
             PlayerPrefs.SetInt("levels",-1);
+            PlayerPrefs.SetInt("stages",0);
             SceneManager.LoadScene(introScene);
         }
     }
     void Start()
     {
-        swiper.pageCount = stages.Length;
         instantiatePages();
         
     }
-    int levelIndex;
     void instantiatePages(){
         for(int i = 0; i< stages.Length; i++){
-            Transform p = GameObject.Instantiate(page,Vector2.zero,Quaternion.identity,stageContainer).transform;
+            Transform p =stageContainer.GetChild(i);
+            //get last children in page (levelContainer)
+            p=p.GetChild(p.childCount-1);
             for(int j = 0; j< stages[i].levels.Length;j++){
-                InitLevel(i,j,p,levelIndex<=PlayerPrefs.GetInt("levels")+1);
-                levelIndex++;
+                bool active = false;
+                int currentStage = PlayerPrefs.GetInt("stages");
+                if(i<currentStage){
+                    active=true;
+                }
+                else if(i==currentStage){
+                    active= PlayerPrefs.GetInt("levels")>=j-1;
+                }
+                else if(i== currentStage+1){
+                    active= PlayerPrefs.GetInt("levels")>= stages[i-1].levels.Length-1 && j==0;
+                }
+                InitLevel(i,j,p,active);
             }
         }
     }
@@ -65,7 +74,14 @@ public class LevelSelect : MonoBehaviour
         }
     }
     public void loadNext(){
-        loadScene(PlayerPrefs.GetInt("levels")+1);
+        int stage = PlayerPrefs.GetInt("stages");
+        if(PlayerPrefs.GetInt("levels")+1<=stages[stage].levels.Length){
+            loadScene(stage,PlayerPrefs.GetInt("levels")+1);
+        }
+        else{
+            loadScene(stage+1,0);
+        }
+        
     }
     [ContextMenu("reset")]
     public void Reset(){

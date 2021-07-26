@@ -15,6 +15,7 @@ public class LevelUI : MonoBehaviour
 
     public void load(){
         levelSelect.loadScene(stage,level);
+        
     }
     public void init(int s, int l, LevelSelect sel, bool active){
         stage=s;

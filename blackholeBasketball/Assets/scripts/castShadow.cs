@@ -6,6 +6,8 @@ public class castShadow : MonoBehaviour
 {
     public GameObject shadowPrefab;
     Transform shadow;
+    [SerializeField]
+    float offset = 0;
     Vector2 startScale;
     [SerializeField]
     float size;
@@ -25,7 +27,7 @@ public class castShadow : MonoBehaviour
         setShadowPosition();
     }
     void setShadowPosition(){
-        shadow.position = new Vector2(transform.position.x,GameManager.instance.floorHeight);
+        shadow.position = new Vector2(transform.position.x+offset,GameManager.instance.floorHeight);
         shadow.localScale = startScale/Mathf.Max(Mathf.Sqrt(transform.position.y-GameManager.instance.floorHeight),1);
     }
 }

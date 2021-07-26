@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public float floorHeight;
     bool won = false;
     bool newLevel = false;
-    int level;
+    Level level;
     [SerializeField]
     Menu menu;
     bool startEdit = false;
@@ -68,12 +68,16 @@ public class GameManager : MonoBehaviour
             blackHoleGenerator.reset();
             
         }
-        OnStartPlay();
-        newLevel = false;
-        level = GameObject.FindObjectOfType<Level>().levelNumber;
         
-        if(startEdit){
+        newLevel = false;
+        level = GameObject.FindObjectOfType<Level>();
+        
+        if(!startEdit){
+            OnStartPlay();
             //start with edit phase (reset button on winScreen)
+            
+        }
+        else{
             startEditPhase();
             startEdit=false;
         }
@@ -116,9 +120,13 @@ public class GameManager : MonoBehaviour
         if(won)
             return;
         won = true;
-        if(PlayerPrefs.GetInt("levels")<level){
-            PlayerPrefs.SetInt("levels",level);
+        if(PlayerPrefs.GetInt("stages")<=level.stage){
+             if(PlayerPrefs.GetInt("levels")<level.levelNumber || PlayerPrefs.GetInt("stages")<level.stage){
+                PlayerPrefs.SetInt("levels",level.levelNumber);
+                PlayerPrefs.SetInt("stages",level.stage);
+            }
         }
+       
         OnWin();
         menu.Open();
 
@@ -128,8 +136,15 @@ public class GameManager : MonoBehaviour
         newLevel = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
-    public void Reset(){
+    public void Reset(bool keepBlackHoles){
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        startEdit=true;
+        startEdit= true;
+        if(!keepBlackHoles){
+            newLevel=true;
+        }
+    }
+    public static IEnumerator wait(float time, Action action){
+        yield return new WaitForSeconds(time);
+        action.Invoke();
     }
 }

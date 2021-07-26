@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="500"
+   height="200"
+   viewBox="0 0 132.29166 52.916668"
+   version="1.1"
+   id="svg15733"
+   inkscape:export-filename="C:\Users\Ben\Documents\GitHub\blackHoleBasketball\blackholeBasketball\Assets\sprites\UI\blackHoleCount.png"
+   inkscape:export-xdpi="94"
+   inkscape:export-ydpi="94"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="blackHoleCount.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview15735"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     width="500px"
+     inkscape:zoom="1.8973437"
+     inkscape:cx="197.90827"
+     inkscape:cy="129.91848"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs15730" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#2f3542;fill-opacity:1;stroke-width:9.57995"
+       id="rect15816"
+       width="127.71481"
+       height="33.817978"
+       x="1.6651341"
+       y="9.5493441"
+       ry="6.2345991" />
+    <rect
+       style="fill:#57606f;fill-opacity:1;stroke-width:46.7881"
+       id="rect15957"
+       width="94.407211"
+       height="28.587118"
+       x="32.352245"
+       y="12.164774"
+       ry="3.99616" />
+  </g>
+</svg>

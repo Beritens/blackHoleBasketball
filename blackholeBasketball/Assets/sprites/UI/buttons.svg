@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="500"
+   height="500"
+   viewBox="0 0 132.29167 132.29167"
+   version="1.1"
+   id="svg25640"
+   inkscape:export-filename="C:\Users\Ben\Documents\GitHub\blackHoleBasketball\blackholeBasketball\Assets\sprites\UI\resetButton.png"
+   inkscape:export-xdpi="95.999992"
+   inkscape:export-ydpi="95.999992"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="buttons.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview25642"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="0.47433592"
+     inkscape:cx="144.41242"
+     inkscape:cy="363.66632"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs25637">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient27006">
+      <stop
+         style="stop-color:#ff6348;stop-opacity:1"
+         offset="0"
+         id="stop27002" />
+      <stop
+         style="stop-color:#ff7f50;stop-opacity:1"
+         offset="1"
+         id="stop27004" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient27006"
+       id="linearGradient27008"
+       x1="64.496559"
+       y1="115.17131"
+       x2="68.423737"
+       y2="13.804778"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-177.88446,-7.0996016)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient27006"
+       id="linearGradient27952"
+       x1="68.604958"
+       y1="104.91634"
+       x2="69.442841"
+       y2="5.5219116"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-110.55536,-104.83624)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient27006"
+       id="linearGradient31507"
+       x1="71.271751"
+       y1="112.63372"
+       x2="72.337852"
+       y2="18.847281"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient27006"
+       id="linearGradient32059"
+       gradientUnits="userSpaceOnUse"
+       x1="71.271751"
+       y1="112.63372"
+       x2="72.337852"
+       y2="18.847281" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient27006"
+       id="linearGradient32061"
+       gradientUnits="userSpaceOnUse"
+       x1="71.271751"
+       y1="112.63372"
+       x2="72.337852"
+       y2="18.847281" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient27006"
+       id="linearGradient32063"
+       gradientUnits="userSpaceOnUse"
+       x1="71.271751"
+       y1="112.63372"
+       x2="72.337852"
+       y2="18.847281" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient27006"
+       id="linearGradient32065"
+       gradientUnits="userSpaceOnUse"
+       x1="71.271751"
+       y1="112.63372"
+       x2="72.337852"
+       y2="18.847281" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient27006"
+       id="linearGradient32067"
+       gradientUnits="userSpaceOnUse"
+       x1="71.271751"
+       y1="112.63372"
+       x2="72.337852"
+       y2="18.847281" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient27006"
+       id="linearGradient32069"
+       gradientUnits="userSpaceOnUse"
+       x1="71.271751"
+       y1="112.63372"
+       x2="72.337852"
+       y2="18.847281" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient27006"
+       id="linearGradient32762"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(188.13944,-78.292837)"
+       x1="43.361931"
+       y1="99.788849"
+       x2="44.19981"
+       y2="35.103584" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient27006"
+       id="linearGradient33095"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(8.6772923,17.040253)"
+       x1="68.604958"
+       y1="104.91634"
+       x2="69.442841"
+       y2="5.5219116" />
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="fill:url(#linearGradient27008);fill-opacity:1;stroke:#2f3542;stroke-width:7.9375;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path26902"
+       cx="-111.62152"
+       cy="58.768921"
+       r="55.613544" />
+    <path
+       id="path10305-0"
+       style="color:#000000;fill:#2f3542;fill-opacity:1;stroke:none;stroke-width:0.623649;stroke-opacity:1;-inkscape-stroke:none"
+       d="m -138.91748,30.575327 5.95334,6.998233 c -11.09384,10.960628 -12.03417,28.951817 -1.7742,41.012549 4.20553,4.943645 9.69632,8.189275 15.57965,9.665603 l 3.87372,-11.83813 c -3.73797,-0.763352 -7.26229,-2.746388 -9.95301,-5.90936 -5.88808,-6.921518 -5.58347,-16.877692 0.39081,-23.389064 l 5.99971,7.052737 10.39682,-29.17749 z m 34.59892,-0.734567 -3.87371,11.838112 c 3.73796,0.763355 7.26228,2.746389 9.952999,5.909368 5.888082,6.921518 5.583463,16.877692 -0.39081,23.389064 l -5.999709,-7.052737 -10.39682,29.177491 30.466837,-5.58492 -5.95335,-6.99824 c 11.093847,-10.960624 12.03417,-28.951813 1.774208,-41.012538 -4.205531,-4.94366 -9.696324,-8.189275 -15.579645,-9.6656 z" />
+    <rect
+       style="fill:url(#linearGradient27952);fill-opacity:1;stroke:#2f3542;stroke-width:6.61458333;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect27846"
+       width="126.21513"
+       height="80.856567"
+       x="-116.07727"
+       y="-96.158943"
+       ry="20.828215"
+       inkscape:export-filename="C:\Users\Ben\Documents\GitHub\blackHoleBasketball\blackholeBasketball\Assets\sprites\UI\playButton.png"
+       inkscape:export-xdpi="95.999992"
+       inkscape:export-ydpi="95.999992" />
+    <rect
+       style="fill:url(#linearGradient33095);fill-opacity:1;stroke:#2f3542;stroke-width:6.61458333;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect27846-1"
+       width="126.21513"
+       height="80.856567"
+       x="3.1553826"
+       y="25.71755"
+       ry="20.828215"
+       inkscape:export-filename="C:\Users\Ben\Documents\GitHub\blackHoleBasketball\blackholeBasketball\Assets\sprites\UI\pauseButton.png"
+       inkscape:export-xdpi="95.999992"
+       inkscape:export-ydpi="95.999992" />
+    <rect
+       style="fill:url(#linearGradient32762);fill-opacity:1;stroke:#2f3542;stroke-width:7.9375;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect27846-3"
+       width="72.968132"
+       height="72.5737"
+       x="195.63347"
+       y="-47.133469"
+       ry="20.828215"
+       inkscape:export-filename="C:\Users\Ben\Documents\GitHub\blackHoleBasketball\blackholeBasketball\Assets\sprites\UI\button.png"
+       inkscape:export-xdpi="95.999992"
+       inkscape:export-ydpi="95.999992" />
+    <path
+       sodipodi:type="star"
+       style="fill:#2f3542;fill-opacity:1;stroke:none;stroke-width:30;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path28377"
+       inkscape:flatsided="true"
+       sodipodi:sides="3"
+       sodipodi:cx="-93.915993"
+       sodipodi:cy="496.41309"
+       sodipodi:r1="104.61696"
+       sodipodi:r2="52.308479"
+       sodipodi:arg1="2.0943951"
+       sodipodi:arg2="3.1415927"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m -146.22447,587.01403 0,-181.20189 156.925436,90.60095 z"
+       transform="matrix(0.26458333,0,0,0.26458333,-32.280118,-187.07329)"
+       inkscape:transform-center-x="-6.9199766"
+       inkscape:transform-center-y="-1.6547103e-06"
+       inkscape:export-filename="C:\Users\Ben\Documents\GitHub\blackHoleBasketball\blackholeBasketball\Assets\sprites\UI\playButton.png"
+       inkscape:export-xdpi="95.999992"
+       inkscape:export-ydpi="95.999992" />
+    <rect
+       style="fill:#2f3542;fill-opacity:1;stroke:none;stroke-width:7.54793;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect32322"
+       width="122.2709"
+       height="122.2709"
+       x="203.79922"
+       y="-189.04539"
+       ry="33.538158"
+       inkscape:export-filename="C:\Users\Ben\Documents\GitHub\blackHoleBasketball\blackholeBasketball\Assets\sprites\UI\home.png"
+       inkscape:export-xdpi="95.999992"
+       inkscape:export-ydpi="95.999992" />
+    <g
+       id="g9219"
+       transform="matrix(0.79030873,0,0,0.79030873,211.582,-180.48731)"
+       style="fill:url(#linearGradient31507);fill-opacity:1"
+       inkscape:export-filename="C:\Users\Ben\Documents\GitHub\blackHoleBasketball\blackholeBasketball\Assets\sprites\UI\home.png"
+       inkscape:export-xdpi="95.999992"
+       inkscape:export-ydpi="95.999992">
+      <path
+         style="fill:url(#linearGradient32059);fill-opacity:1;stroke-width:4.98691"
+         id="rect5866"
+         width="70.080879"
+         height="24.419117"
+         x="51.090179"
+         y="18.6535"
+         ry="4.6512604"
+         sodipodi:type="rect"
+         d="m 55.74144,18.6535 h 60.77836 c 2.5768,0 4.65126,2.074462 4.65126,4.65126 v 15.116596 c 0,2.576798 -2.07446,4.651261 -4.65126,4.651261 H 55.74144 c -2.576798,0 -4.651261,-2.074463 -4.651261,-4.651261 V 23.30476 c 0,-2.576798 2.074463,-4.65126 4.651261,-4.65126 z" />
+      <rect
+         style="fill:url(#linearGradient32061);fill-opacity:1;stroke-width:2.98867"
+         id="rect5967"
+         width="25.170542"
+         height="24.419117"
+         x="15.140779"
+         y="18.6535"
+         ry="4.6512604" />
+      <rect
+         style="fill:url(#linearGradient32063);fill-opacity:1;stroke-width:4.98691"
+         id="rect5969"
+         width="70.080879"
+         height="24.419117"
+         x="51.090179"
+         y="52.62582"
+         ry="4.6512604" />
+      <rect
+         style="fill:url(#linearGradient32065);fill-opacity:1;stroke-width:2.98867"
+         id="rect5971"
+         width="25.170542"
+         height="24.419117"
+         x="15.140779"
+         y="52.62582"
+         ry="4.6512604" />
+      <rect
+         style="fill:url(#linearGradient32067);fill-opacity:1;stroke-width:4.98691"
+         id="rect5973"
+         width="70.080879"
+         height="24.419117"
+         x="51.090179"
+         y="88.282722"
+         ry="4.6512604" />
+      <rect
+         style="fill:url(#linearGradient32069);fill-opacity:1;stroke-width:2.98867"
+         id="rect5975"
+         width="25.170542"
+         height="24.419117"
+         x="15.140779"
+         y="88.282722"
+         ry="4.6512604" />
+    </g>
+    <rect
+       style="fill:#2f3542;fill-opacity:1;stroke:none;stroke-width:7.9375;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect33120"
+       width="14.199203"
+       height="48.908367"
+       x="46.216892"
+       y="41.69165"
+       ry="7.0996013"
+       inkscape:export-filename="C:\Users\Ben\Documents\GitHub\blackHoleBasketball\blackholeBasketball\Assets\sprites\UI\pauseButton.png"
+       inkscape:export-xdpi="95.999992"
+       inkscape:export-ydpi="95.999992" />
+    <rect
+       style="fill:#2f3542;fill-opacity:1;stroke:none;stroke-width:7.9375;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect33202"
+       width="14.199203"
+       height="48.908367"
+       x="71.875572"
+       y="41.69165"
+       ry="7.0996013"
+       inkscape:export-filename="C:\Users\Ben\Documents\GitHub\blackHoleBasketball\blackholeBasketball\Assets\sprites\UI\pauseButton.png"
+       inkscape:export-xdpi="95.999992"
+       inkscape:export-ydpi="95.999992" />
+  </g>
+</svg>

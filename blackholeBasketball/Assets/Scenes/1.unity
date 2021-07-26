@@ -339,5 +339,13 @@ PrefabInstance:
       propertyPath: nextScene
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5566861186137364580, guid: cbb08bc6c32a9e945a036ecf5ff46ea4, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.032040596
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566861186137364580, guid: cbb08bc6c32a9e945a036ecf5ff46ea4, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.014319897
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbb08bc6c32a9e945a036ecf5ff46ea4, type: 3}

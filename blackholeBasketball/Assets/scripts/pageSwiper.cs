@@ -12,16 +12,27 @@ public class pageSwiper : MonoBehaviour, IDragHandler, IEndDragHandler
     public float easing = 0.5f;
     int current = 0;
     public int pageCount;
+    public Transform pageHolder;
+    public Transform otherPageStuffHolder;
+    float actualWidth;
+    public LevelSelect levelSelect;
+
     void Start()
     {
+        pageCount=levelSelect.stages.Length;
+        actualWidth = width* GetComponentInParent<Canvas>().transform.localScale.x;
         panelLocation = transform.position;
         cam = Camera.main;
+        scale();
     }
+    
     public void OnDrag(PointerEventData eventData)
     {
         
         float difference = cam.ScreenToWorldPoint(eventData.pressPosition).x-cam.ScreenToWorldPoint(eventData.position).x;
+
         transform.position = panelLocation- new Vector3(difference,0,0);
+        scale();
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -30,11 +41,11 @@ public class pageSwiper : MonoBehaviour, IDragHandler, IEndDragHandler
         if(Mathf.Abs(percentage)>=percentThreshold){
             Vector3 newLocation = panelLocation;
             if(percentage>0 && current<pageCount-1){
-                newLocation -= Vector3.right * (width);
+                newLocation -= Vector3.right * (actualWidth);
                 current++;
             }
             else if(percentage<0 && current>0){ 
-                newLocation += Vector3.right * (width);
+                newLocation += Vector3.right * (actualWidth);
                 current--;
             }
             StartCoroutine(SmoothMove(transform.position,newLocation,easing));
@@ -46,6 +57,21 @@ public class pageSwiper : MonoBehaviour, IDragHandler, IEndDragHandler
         }
         
     }
+    void scale(){
+        updateScale(current);
+        updateScale(current-1);
+        updateScale(current+1);
+    }
+    void updateScale(int index){
+        if(index<0 || index >= pageHolder.childCount){
+            return;
+        }
+        Transform page = pageHolder.GetChild(index);
+        float dist = Mathf.Abs(page.position.x);
+        dist= Mathf.Lerp(0.75f,1.25f,1-Mathf.Clamp01(dist*0.4f));
+        page.localScale = Vector3.one *dist;
+        otherPageStuffHolder.GetChild(index).localScale=page.localScale;
+    }
 
     
 
@@ -54,6 +80,7 @@ public class pageSwiper : MonoBehaviour, IDragHandler, IEndDragHandler
         while(t<=1.0f){
             t+=Time.deltaTime/seconds;
             transform.position = Vector3.Lerp(startpos,endpos,Mathf.SmoothStep(0f,1f,t));
+            scale();
             yield return null;
         }
     }

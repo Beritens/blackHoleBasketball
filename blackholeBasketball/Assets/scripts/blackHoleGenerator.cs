@@ -27,6 +27,7 @@ public class blackHoleGenerator : MonoBehaviour
     AudioClip spawnSound;
     //stop Editing after winning
     bool canEdit = true;
+    int order = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,7 @@ public class blackHoleGenerator : MonoBehaviour
         newLevel();
     }
     public void reset(){
+        order=0;
         canEdit=true;
         editing = false;
         blackHoles = new List<blackHole>();
@@ -49,6 +51,7 @@ public class blackHoleGenerator : MonoBehaviour
     }
     public void newLevel(){
         //editing = true;
+        order=0;
         canEdit=true;
         blackHoles = new List<blackHole>();
         blackHolePositions = new List<Vector2>();
@@ -69,6 +72,7 @@ public class blackHoleGenerator : MonoBehaviour
             placeAndMove();
         
     }
+    
     void placeAndMove(){
         
         if(Input.touches.Length > 0){
@@ -95,8 +99,10 @@ public class blackHoleGenerator : MonoBehaviour
                 }
                 else if(blackHoleCount-blackHoles.Count >= 1){
                     //spawn black hole
+
                     GameObject hole = GameObject.Instantiate(blackHolePrefab,mousePos,Quaternion.identity);
-                    hole.GetComponentInChildren<SpriteRenderer>().sortingOrder+= blackHoles.Count;
+                    hole.GetComponentInChildren<SpriteRenderer>().sortingOrder+= order;
+                    order++;
                     //animate black hole (I love lean tween)
                     hole.transform.localScale=Vector3.zero;
                     LeanTween.scale(hole,Vector3.one,0.1f);
@@ -104,6 +110,7 @@ public class blackHoleGenerator : MonoBehaviour
                     blackHolePositions.Add(mousePos);
                     currentBlackHole = hole.GetComponent<blackHole>();
                     blackHoles.Add(currentBlackHole);
+                    currentBlackHole.init(order);
                     source.PlayOneShot(spawnSound);
                     UpdateDisplay();
                 }
@@ -143,9 +150,11 @@ public class blackHoleGenerator : MonoBehaviour
     void SpawnHoles(){
         for(int i = 0; i<blackHolePositions.Count;i++){
             GameObject hole = GameObject.Instantiate(blackHolePrefab,blackHolePositions[i],Quaternion.identity);
-            hole.GetComponentInChildren<SpriteRenderer>().sortingOrder+= i;
-            blackHoles.Add(hole.GetComponent<blackHole>());
-            
+            hole.GetComponentInChildren<SpriteRenderer>().sortingOrder+= order;
+            order++;
+            blackHole bhole = hole.GetComponent<blackHole>();
+            blackHoles.Add(bhole);
+            bhole.init(order);
         }
     }
     

@@ -6,6 +6,7 @@ public class Level : MonoBehaviour
 {
     //obsolete
     public int blackHoleCount;
+    public int stage;
     public int levelNumber;
 
 }
