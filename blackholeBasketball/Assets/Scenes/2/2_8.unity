@@ -226,6 +226,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: plank (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4321808132446657409, guid: b13369bfeff5bb348bdc4cd68fdd097b, type: 3}
+      propertyPath: size.x
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321808132446657409, guid: b13369bfeff5bb348bdc4cd68fdd097b, type: 3}
+      propertyPath: size.y
+      value: 0.35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b13369bfeff5bb348bdc4cd68fdd097b, type: 3}
 --- !u!4 &840653172 stripped
@@ -240,6 +248,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2420901169040657243, guid: 76a7f90434bd1c6418d3786792f0f43f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 155.03003
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566162587309304499, guid: 76a7f90434bd1c6418d3786792f0f43f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -53.010986
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335735216820781540, guid: 76a7f90434bd1c6418d3786792f0f43f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 321.40002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642177142983773872, guid: 76a7f90434bd1c6418d3786792f0f43f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 145.02002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642177143702724839, guid: 76a7f90434bd1c6418d3786792f0f43f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -121.18994
+      objectReference: {fileID: 0}
     - target: {fileID: 4642177144313607666, guid: 76a7f90434bd1c6418d3786792f0f43f, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -292,6 +320,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 63.23993
       objectReference: {fileID: 0}
+    - target: {fileID: 7773020216809897452, guid: 76a7f90434bd1c6418d3786792f0f43f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 282.66003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76a7f90434bd1c6418d3786792f0f43f, type: 3}
 --- !u!1001 &1065528478
@@ -316,6 +348,10 @@ PrefabInstance:
     - target: {fileID: 6912820085068455730, guid: 08d3904f200bd7649a8c2782aa1b29a0, type: 3}
       propertyPath: levelNumber
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6912820085068455730, guid: 08d3904f200bd7649a8c2782aa1b29a0, type: 3}
+      propertyPath: blackHoleCount
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7547831307497958887, guid: 08d3904f200bd7649a8c2782aa1b29a0, type: 3}
       propertyPath: m_LocalRotation.w

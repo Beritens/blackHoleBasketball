@@ -189,5 +189,8 @@ public class blackHoleGenerator : MonoBehaviour
     void UpdateDisplay(){
         display.Display(blackHoleCount-blackHoles.Count);
     }
+    public int count(){
+        return blackHoles.Count;
+    }
     
 }

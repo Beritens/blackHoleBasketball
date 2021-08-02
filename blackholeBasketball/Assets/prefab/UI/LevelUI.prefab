@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000030518, y: 0}
-  m_SizeDelta: {x: 35.0224, y: 30}
+  m_SizeDelta: {x: 40.6284, y: 34.8021}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4507196452051328665
 CanvasRenderer:
@@ -69,8 +69,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1218385e89fba0a438450c4f0693e7a6, type: 2}
-  m_sharedMaterial: {fileID: 1865094202684620939, guid: 1218385e89fba0a438450c4f0693e7a6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e66fc371d102b9343bbb5df3122e622f, type: 2}
+  m_sharedMaterial: {fileID: -3470199480595270990, guid: e66fc371d102b9343bbb5df3122e622f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -94,15 +94,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.8
-  m_fontSizeBase: 22.8
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 1024
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -174,7 +174,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 6.3924, y: -5.6951}
+  m_AnchoredPosition: {x: 6.392395, y: -5.6951294}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4507196453696113380
@@ -276,9 +276,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5108319638222179301}
-        m_TargetAssemblyTypeName: buttonClick, Assembly-CSharp
-        m_MethodName: click
+      - m_Target: {fileID: 6138459568919492827}
+        m_TargetAssemblyTypeName: LevelUI, Assembly-CSharp
+        m_MethodName: load
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -302,18 +302,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 0.9
   time: 0.1
-  delayedEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6138459568919492827}
-        m_TargetAssemblyTypeName: LevelUI, Assembly-CSharp
-        m_MethodName: load
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2

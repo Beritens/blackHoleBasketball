@@ -141,7 +141,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shadowPrefab: {fileID: 5406527091649943874, guid: 604e9d5ed6893874595e78e8ebb457bd, type: 3}
-  size: 0.7
+  offset: 0
+  size: {x: 0.8, y: 0.8}
+  resize: 1
+  shadowForm: {fileID: 0}
 --- !u!1 &3321592045928389174
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,8 +492,8 @@ MonoBehaviour:
   - {fileID: 3321592046035160643}
   - {fileID: 3321592046291736265}
   m_Bounds:
-    m_Center: {x: 0.15069555, y: 0.1774872, z: 0}
-    m_Extent: {x: 0.19119371, y: 0.1422697, z: 0}
+    m_Center: {x: 0.15168504, y: 0.1781981, z: 0}
+    m_Extent: {x: 0.190204, y: 0.1428988, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &3321592046123484569

@@ -283,6 +283,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: plank (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4321808132446657409, guid: b13369bfeff5bb348bdc4cd68fdd097b, type: 3}
+      propertyPath: size.x
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321808132446657409, guid: b13369bfeff5bb348bdc4cd68fdd097b, type: 3}
+      propertyPath: size.y
+      value: 0.35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b13369bfeff5bb348bdc4cd68fdd097b, type: 3}
 --- !u!4 &418786369 stripped

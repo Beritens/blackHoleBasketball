@@ -26,7 +26,6 @@ public class GameManager : MonoBehaviour
     
     // Start is called before the first frame update
     void Awake(){
-
          if(instance == null){
               instance = this;
               DontDestroyOnLoad(gameObject);
@@ -120,6 +119,7 @@ public class GameManager : MonoBehaviour
         if(won)
             return;
         won = true;
+        AddBlackHoles();
         if(PlayerPrefs.GetInt("stages")<=level.stage){
              if(PlayerPrefs.GetInt("levels")<level.levelNumber || PlayerPrefs.GetInt("stages")<level.stage){
                 PlayerPrefs.SetInt("levels",level.levelNumber);
@@ -131,6 +131,19 @@ public class GameManager : MonoBehaviour
         menu.Open();
 
         
+    }
+    void AddBlackHoles(){
+        string key = "s:"+level.stage.ToString()+" l:"+level.levelNumber.ToString()+ "BlackHoleCount";
+        if(!PlayerPrefs.HasKey(key)){
+            PlayerPrefs.SetInt(key,level.blackHoleCount);
+        }
+        int old = PlayerPrefs.GetInt(key);
+        int currentCount = blackHoleGenerator.count();
+        if(currentCount<old){
+            PlayerPrefs.SetInt(key,currentCount);
+            PlayerPrefs.SetInt("blackHoles",PlayerPrefs.GetInt("blackHoles")+(old-currentCount));
+            Debug.Log("Ayyy boy, you got "+ (old-currentCount) + " black holes because you are so good at the game. Now you have "+ PlayerPrefs.GetInt("blackHoles")+ " black holes in total.");
+        }
     }
     public void GoToNextLevel(){
         newLevel = true;

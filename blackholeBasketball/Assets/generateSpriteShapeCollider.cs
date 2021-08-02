@@ -10,8 +10,11 @@ public class generateSpriteShapeCollider : MonoBehaviour
     public float radius;
     [ContextMenu("Fine, I will do it myself")]
     void generateCollider(){
-       for (int i = this.transform.childCount; i > 0; --i)
+       for (int i = this.transform.childCount; i > 0; --i){
+           if(transform.GetChild(0).gameObject.name == "box")
             DestroyImmediate(this.transform.GetChild(0).gameObject);
+       }
+            
         // List<Vector2> positions = new List<Vector2>(); 
         // for(int i = 0; i<spriteShape.spline.GetPointCount();i++){
            
@@ -40,6 +43,7 @@ public class generateSpriteShapeCollider : MonoBehaviour
         box.transform.position=((Vector2)transform.TransformPoint(pos)-(Vector2)(box.transform.right.normalized*(radius*boxOffset))*transform.localScale.x);
         
         box.transform.parent=parent;
+        box.transform.SetAsFirstSibling();
         
         return box;
 

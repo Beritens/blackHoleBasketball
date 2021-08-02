@@ -16,13 +16,20 @@ public class LevelSelect : MonoBehaviour
     public GameObject level;
     [Scene]
     public string introScene;
+    public pageSwiper swiper;
+    
     void Awake()
     {
+        //also doing other PlayerPref stuff here because I'm too lazy to create a new script
+        if(!PlayerPrefs.HasKey("blackHoles")){
+            PlayerPrefs.SetInt("blackHoles",0);
+        }
         if(!PlayerPrefs.HasKey("levels")){
             PlayerPrefs.SetInt("levels",-1);
             PlayerPrefs.SetInt("stages",0);
             SceneManager.LoadScene(introScene);
         }
+        
     }
     void Start()
     {
@@ -30,6 +37,7 @@ public class LevelSelect : MonoBehaviour
         
     }
     void instantiatePages(){
+        int stage = 0;
         for(int i = 0; i< stages.Length; i++){
             Transform p =stageContainer.GetChild(i);
             //get last children in page (levelContainer)
@@ -46,9 +54,13 @@ public class LevelSelect : MonoBehaviour
                 else if(i== currentStage+1){
                     active= PlayerPrefs.GetInt("levels")>= stages[i-1].levels.Length-1 && j==0;
                 }
+                if(active){
+                    stage = i;
+                }
                 InitLevel(i,j,p,active);
             }
         }
+        swiper.GoToPage(stage);
     }
     void InitLevel(int s, int l,Transform page,bool a){
         LevelUI levelUI = GameObject.Instantiate(level,Vector2.zero,Quaternion.identity,page).GetComponent<LevelUI>();
@@ -75,7 +87,7 @@ public class LevelSelect : MonoBehaviour
     }
     public void loadNext(){
         int stage = PlayerPrefs.GetInt("stages");
-        if(PlayerPrefs.GetInt("levels")+1<=stages[stage].levels.Length){
+        if(PlayerPrefs.GetInt("levels")+1<=stages[stage].levels.Length-1){
             loadScene(stage,PlayerPrefs.GetInt("levels")+1);
         }
         else{

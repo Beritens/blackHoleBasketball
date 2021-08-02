@@ -16,11 +16,16 @@ public class pageSwiper : MonoBehaviour, IDragHandler, IEndDragHandler
     public Transform otherPageStuffHolder;
     float actualWidth;
     public LevelSelect levelSelect;
+    Vector3 startPos;
+    void Awake()
+    {
+        startPos=transform.position;
+        actualWidth = width* GetComponentInParent<Canvas>().transform.localScale.x;
+    }
 
     void Start()
     {
         pageCount=levelSelect.stages.Length;
-        actualWidth = width* GetComponentInParent<Canvas>().transform.localScale.x;
         panelLocation = transform.position;
         cam = Camera.main;
         scale();
@@ -71,6 +76,12 @@ public class pageSwiper : MonoBehaviour, IDragHandler, IEndDragHandler
         dist= Mathf.Lerp(0.75f,1.25f,1-Mathf.Clamp01(dist*0.4f));
         page.localScale = Vector3.one *dist;
         otherPageStuffHolder.GetChild(index).localScale=page.localScale;
+    }
+    public void GoToPage(int index){
+        current = index;
+        transform.position= startPos-Vector3.right*(actualWidth)*current;
+        panelLocation=transform.position;
+        scale();
     }
 
     

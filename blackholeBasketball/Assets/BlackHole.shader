@@ -1,4 +1,4 @@
-Shader "GrabPassInvert"
+Shader "BlackHole"
 {
     Properties
     {

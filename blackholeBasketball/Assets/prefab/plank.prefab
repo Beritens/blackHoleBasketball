@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1433763383453620820}
   - component: {fileID: 1433763383453620817}
   - component: {fileID: 1433763383453620821}
+  - component: {fileID: 4321808132446657409}
   m_Layer: 0
   m_Name: plank
   m_TagString: Untagged
@@ -181,3 +182,20 @@ MonoBehaviour:
   edge: {fileID: 1433763383453620817}
   boxOffset: 1
   radius: 0.2
+--- !u!114 &4321808132446657409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433763383453620822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6102b8971f356ce498f5623a63b26cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shadowPrefab: {fileID: 5406527091649943874, guid: 604e9d5ed6893874595e78e8ebb457bd, type: 3}
+  offset: 0
+  size: {x: 0.5, y: 0.5}
+  resize: 0
+  shadowForm: {fileID: 21300000, guid: 1acee9771d40dac439ee227f17f34dde, type: 3}
