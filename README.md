@@ -12,5 +12,5 @@ I use a grab-pass shader to create the distortion around the black holes. This l
 I made sure that the physics in this game are deterministic. The game is all about fine adjustments. If there was randomness, you would have to get lucky to get the ball into the hoop.
 To achieve this you have to reload the scene after every throw.
 
-Trailer: https://www.youtube.com/watch?v=TviJZazU2cw
+Trailer: https://www.youtube.com/watch?v=TviJZazU2cw  
 Playstore: https://play.google.com/store/apps/details?id=com.Beritens.BlackHoleBasketball
